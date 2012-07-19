@@ -1,0 +1,352 @@
+/*
+ CSS for GitPress Repo */
+.repo,.repo * {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.repo ul * {
+	display:block;
+	font-family:sans-serif;
+	font-size:13px;
+	line-height:18px;
+}
+
+.repo {
+	width:100%;
+	position:relative;
+	padding-bottom:1px;
+	color:#555;
+	overflow:hidden;
+	height:300px;
+	-webkit-transition:height .25s;
+	-moz-transition:height .25s;
+	-o-transition:height .25s;
+	-ms-transition:height .25s;
+	transition:height .25s;
+	margin:0 0 15px;
+}
+
+.repo .page {
+	background:#f8f8f8;
+	border:4px solid rgba(0,0,0,0.08);
+	border-radius:3px;
+	-ms-filter:alpha(opacity=0);
+	filter:alpha(opacity=0);
+	opacity:0;
+	left:100%;
+	width:98%;
+	position:absolute;
+	-webkit-transition:all .25s;
+	-moz-transition:all .25s;
+	-o-transition:all .25s;
+	-ms-transition:all .25s;
+	transition:all .25s;
+}
+
+.repo .page.active {
+	left:1%!important;
+	-ms-filter:alpha(opacity=100);
+	filter:alpha(opacity=100);
+	opacity:1;
+	display:block;
+}
+
+.repo .page.left {
+	left:-100%;
+}
+
+.repo .loader {
+	position:absolute;
+	display:block;
+	width:100%;
+	height:300px;
+	top:0;
+	left:0;
+	background:url('../images/octocat-spinner-64.gif') no-repeat center 50%;
+}
+
+.repo.loaded .loader {
+	display:none;
+}
+
+.repo h1 {
+	font-family:sans-serif;
+	font-size:20px;
+	line-height:26px;
+	color:#000;
+	font-weight:400;
+	padding:0 0 0 10px;
+}
+
+.repo h1 a:nth-of-type(1),.repo h1 a.active {
+	font-weight:700;
+}
+
+.repo h1 a.active,.repo h1 a.active:active,.repo h1 a.active:visited,.repo h1 a.active:hover {
+	color:#000;
+}
+
+.repo h1 a,.repo h1 a:active,.repo h1 a:visited,.repo h1 a:hover {
+	color:#4183c4;
+	text-decoration:none;
+}
+
+.repo h1 a:after {
+	content:"/";
+	color:#999;
+	font-weight:400;
+	padding:0 5px;
+}
+
+.repo .page,.repo ul {
+	zoom:1;
+}
+
+.repo .page:before,.repo .page:after,.repo ul:before,.repo ul:after {
+	content:"";
+	display:table;
+}
+
+.repo .page:after,.repo ul:after {
+	clear:both;
+}
+
+.repo ul {
+	border:1px solid rgba(0,0,0,0.25);
+	margin:0;
+	padding:0;
+}
+
+.repo li {
+	width:100%;
+	float:left;
+	border-bottom:1px solid #ccc;
+	position:relative;
+	white-space:nowrap;
+	margin:0;
+	padding:0;
+}
+
+.repo li.titles {
+	background:linear-gradient(#fafafa,#eaeaea);
+	font-weight:700;
+	text-shadow:0 1px 0 #fff;
+	padding:10px 10px 8px 36px;
+}
+
+.repo li:before {
+	content:url('../images/file.png');
+	position:absolute;
+	font-family:FontAwesome;
+	top:10px;
+	left:10px;
+	font-size:18px;
+	-webkit-font-smoothing:antialiased;
+}
+
+.repo li.dir:before {
+	content:url('../images/folder.png');
+}
+
+.repo li:last-child {
+	border:0;
+	padding-bottom:none;
+	margin:0;
+}
+
+.repo li a,.repo li a:visited,.repo li a:active {
+	color:#4183c4;
+	width:100%;
+	display:block;
+	text-decoration:none;
+	padding:10px 10px 8px 36px;
+}
+
+.repo li a:hover {
+	text-decoration:underline;
+}
+
+.repo li span {
+	display:inline-block;
+}
+
+.repo li span:nth-of-type(1) {
+	width:30%;
+}
+
+.repo li span:nth-of-type(2) {
+	width:20%;
+}
+
+.repo li span:nth-of-type(3) {
+	width:40%;
+}
+
+.repo .vg-container {
+	position:relative;
+	overflow:auto;
+	white-space:pre!important;
+	word-wrap:normal!important;
+	font-family:"Bitstream Vera Sans Mono","Courier New",monospace;
+	font-size:13px;
+	border:1px solid #ddd;
+}
+
+.repo .vg-container,.repo .vg-code {
+	border:0;
+	overflow:auto;
+	margin:0;
+}
+
+.repo .vg-code .vg-line,.repo .vg-gutter .vg-number {
+	display:block;
+	height:1.5em;
+	line-height:1.5em!important;
+}
+
+.repo .vg-gutter {
+	float:left;
+	min-width:20px;
+	width:auto;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	background-color:#ececec;
+	border-right:1px solid #ddd;
+	text-align:right;
+	color:#aaa;
+	margin-right:.5em;
+	padding:1em .5em;
+}
+
+.repo .vg-number {
+	cursor:pointer;
+}
+
+.repo .vg-code ::-moz-selection,.repo .vg-code ::-webkit-selection,.repo .vg-code ::selection,.repo .vg-line.vg-highlight {
+	background-color:#ffc;
+}
+
+.repo .vg-line span.vg-highlight {
+	color:blue;
+	font-weight:700;
+	text-decoration:underline;
+}
+
+.repo .vg-container .vg-code {
+	display:block;
+	background:#fff;
+	padding:1em .5em;
+}
+
+.repo .vg-code {
+	color:#000;
+	background:#f8f8ff;
+	border:0;
+	padding:.4em;
+}
+
+.repo .vg-code .comment,.repo .vg-code .template_comment,.repo .vg-code .diff .header,.repo .vg-code .javadoc {
+	color:#998;
+	font-style:italic;
+}
+
+.repo .vg-code .keyword,.repo .vg-code .css .rule .keyword,.repo .vg-code .winutils,.repo .vg-code .javascript .title,.repo .vg-code .lisp .title,.repo .vg-code .subst {
+	color:#000;
+	font-weight:700;
+}
+
+.vg-code .number,.vg-code .hexcolor {
+	color:#40a070;
+}
+
+.vg-code .string,.repo .vg-code .tag .value,.repo .vg-code .phpdoc,.repo .vg-code .tex .formula {
+	color:#d14;
+}
+
+.repo .vg-code .title,.repo .vg-code .id {
+	color:#900;
+	font-weight:700;
+}
+
+.repo .vg-code .javascript .title,.repo .vg-code .lisp .title,.repo .vg-code .subst {
+	font-weight:400;
+}
+
+.repo .vg-code .tag,.repo .vg-code .tag .title,.repo .vg-code .rules .property,.repo .vg-code .django .tag .keyword {
+	color:navy;
+	font-weight:400;
+}
+
+.repo .vg-code .attribute,.repo .vg-code .variable,.repo .vg-code .instancevar,.repo .vg-code .lisp .body {
+	color:teal;
+}
+
+.repo .vg-code .regexp {
+	color:#009926;
+}
+
+.repo .vg-code .symbol,.repo .vg-code .ruby .symbol .string,.repo .vg-code .ruby .symbol .keyword,.repo .vg-code .ruby .symbol .keymethods,.repo .vg-code .lisp .keyword,.repo .vg-code .tex .special,.repo .vg-code .input_number {
+	color:#990073;
+}
+
+.repo .vg-code .builtin,.repo .vg-code .built_in,.repo .vg-code .lisp .title {
+	color:#0086b3;
+}
+
+.repo .vg-code .codeprocessor,.repo .vg-code .pi,.repo .vg-code .doctype,.repo .vg-code .shebang,.repo .vg-code .cdata {
+	color:#999;
+	font-weight:700;
+}
+
+.repo .vg-code .deletion {
+	background:#fdd;
+}
+
+.repo .vg-code .addition {
+	background:#dfd;
+}
+
+.repo .vg-code .diff .change {
+	background:#0086b3;
+}
+
+.repo .vg-code .chunk {
+	color:#aaa;
+}
+
+.repo .vg-code .tex .formula {
+	-ms-filter:alpha(opacity=50);
+	filter:alpha(opacity=50);
+	opacity:.5;
+}
+
+.repo .image {
+	text-align:center;
+	padding:1em .5em;
+}
+
+.repo .image .border-wrap {
+	background-color:#fff;
+	border:1px solid #999;
+	line-height:0;
+	display:inline-block;
+}
+
+.repo .image img {
+	border:1px solid #fff;
+	background:url('../images/trans_bg.gif');
+}
+
+.repo h1 a:last-child:after,.repo li.titles:before,.repo li.back:before {
+	content:"";
+}
+
+.repo .vg-code .class .title,.repo .vg-code .haskell .label,.repo .vg-code .tex .command,.repo .vg-code .class {
+	color:#458;
+	font-weight:700;
+}
