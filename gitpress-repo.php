@@ -68,6 +68,10 @@ add_shortcode('gist', 'gitpress_repo_gist_shortcode');
  * @since: GitPress Repo 1.0
  */
 function gitpress_repo_script() {
+	/*
+	 * You might want to wrap in Conditional tags - http://codex.wordpress.org/Conditional_Tags
+	 * EG: if ( is_page() || in_category('GitHub')){}
+	 */
 	wp_enqueue_style( 'gitpress-repo-style', plugins_url('/css/repo.css', __FILE__) );
 	wp_enqueue_script('gitpress-repo-script', plugins_url('/js/repo.min.js', __FILE__), array('jquery'), '1.0', true);
 }
